@@ -1,0 +1,40 @@
+{
+    "model" : {
+        "min_input_size":       350,
+        "max_input_size":       350,
+        "anchors":              [38,67, 83,121, 123,243, 142,149, 177,189, 197,305, 236,207, 241,246, 279,265],
+        "labels":               ["Face_mask","Face_no_mask"]
+    },
+
+    "train": {
+        "train_image_folder":   "D:\\keras-yolo3\\dataset\\train_images\\",
+        "train_annot_folder":   "D:\\keras-yolo3\\dataset\\train_annotations\\",
+        "cache_name":           "face_train.pkl",
+
+        "train_times":          8,
+        "batch_size":           16,
+        "learning_rate":        1e-4,
+        "nb_epochs":            50,
+        "warmup_epochs":        3,
+        "ignore_thresh":        0.5,
+        "gpus":                 "0",
+
+        "grid_scales":          [1,1,1],
+        "obj_scale":            5,
+        "noobj_scale":          1,
+        "xywh_scale":           1,
+        "class_scale":          1,
+
+        "tensorboard_dir":      "logs",
+        "saved_weights_name":   "face_detect.h5",
+        "debug":                true
+    },
+
+    "valid": {
+        "valid_image_folder":   "D:\\keras-yolo3\\dataset\\valid_images\\",
+        "valid_annot_folder":   "D:\\keras-yolo3\\dataset\\valid_annotations\\",
+        "cache_name":           "face_valid.pkl",
+
+        "valid_times":          1
+    }
+}
